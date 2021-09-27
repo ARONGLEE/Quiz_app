@@ -1,16 +1,19 @@
+//user 이름을 넣자
+//user 이름을 바꾸자
+
 const SET_NAME = "user/SET_NAME";
-const SET_COMMENT = "user/SET_COMMENT";
+const SET_MESSAGE = "user/SET_MESSAGE";
 
 export const setName = (name) => {
     return {type: SET_NAME, name};
 }
-export const setComment = (comment) => {
-    return {type: SET_COMMENT, comment};
+export const setMessage = (message) => {
+    return {type: SET_MESSAGE, message};
 }
 
 const initialState = {
     user_name: "",
-    user_comment: "",
+    user_message: "",
 }
 
 export default function reducer(state = initialState, action={})
@@ -20,9 +23,9 @@ export default function reducer(state = initialState, action={})
             console.log(action);
             return {...state, user_name: action.name};
         }
-        case "user/SET_COMMENT": {
+        case "user/SET_MESSAGE": {
             console.log(action);
-            return {...state, user_comment:action.comment};
+            return {...state, user_message:action.message};
         }
         default: return state;
     }

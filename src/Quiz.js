@@ -3,8 +3,8 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addAnswer } from "./redux/modules/quiz";
-
 import { Container, Button, Img, Highlight } from "./elements";
+import Progress from "./Progress";
 
 const Quiz = (props) => {
     const history = useHistory();
@@ -29,22 +29,23 @@ const Quiz = (props) => {
     }
 
     return(
-        <Container>
+        <Container style={{ justifyContent: "center"}}>
             <div>
-                <p>
-                    <Highlight>{user_answer_list.length +1}번 문제</Highlight>
+                <Progress/> 
+                <p style={{ marginTop: "35px", marginBottom: "70px"}}>
+                    <Highlight style={{ paddingLeft:"75px", paddingRight: "75px"}}>{user_answer_list.length +1}번 문제</Highlight>
                 </p>
                 <h3>{quiz_list[user_answer_list.length].question}</h3>
             </div>
-            <div>
+            <div style={{ marginTop: "40px"}}>
                 <Button onClick={()=>{
                     setAnswer(true);
                 }}
-                style = {{width: "50px", height: "50px", margin: "16px"}} >O</Button>
+                style = {{width: "50px", height: "50px", margin: "16px", paddingRight: "30px" }} >O</Button>
                 <Button onClick={() => {
                 setAnswer(false);
             }}
-            style={{ width: "50px", height: "50px", margin: "16px" }} >
+            style={{ width: "50px", height: "50px", margin: "16px", paddingRight: "30px" }} >
             X</Button>        
             </div>
         </Container>

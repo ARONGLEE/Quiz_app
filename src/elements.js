@@ -11,11 +11,12 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  padding: 10px 36px;
+  padding: 8px 24px;
   background: #dadafc;
   border: #dadafc;
   border-radius: 30px;
   margin: 36px 0px;
+  width: 80vw;
 `;
 
 export const Img = styled.img`
@@ -28,4 +29,31 @@ export const Highlight = styled.span`
   background: #fef5d4;
   padding: 5px 10px;
   border-radius: 30px;
+`;
+
+
+export const ProgressBar = styled.div`
+    background: #eee;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+`;
+
+export const HighLighting = styled.div`
+    background: orange;
+    transition: 1s;
+    width: ${(props) => props.width};
+    height: 20px;
+    border-radius: 10px;
+`;
+
+export const Dot = styled.div`
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 5px solid orange;
+    border-radius: 50px;
+    margin: 0px 0px 0px -20px;
 `;
